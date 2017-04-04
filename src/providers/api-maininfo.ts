@@ -13,7 +13,6 @@ export class ApiMaininfo extends ApiBase {
 
   constructor(public http: Http) {
     super();
-
   }
 
   /**
@@ -32,6 +31,15 @@ export class ApiMaininfo extends ApiBase {
     }
     return res;
   }
-
-
+  public GetMarks(categoryid){
+    let res = null;
+    try {
+      res = this.http.get('http://api.auto.ria.com/categories/'+categoryid+'/marks/').toPromise().then(res => super.SuccessCallback(res)).catch(err => super.ErrCallback(err))
+    }
+    catch (err) {
+      res = Promise.reject(false);
+      console.error("Ошибка при выполнении функции GetMarks", err)
+    }
+    return res;
+  }
 }

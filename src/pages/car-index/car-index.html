@@ -1,0 +1,19 @@
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-8 offset-2>
+        <button ion-button outline block round round (click)="Add()">
+          Добавить
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-8 offset-2>
+        <button ion-button outline block round [disabled]="true">
+          Просмотреть добавленные
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
